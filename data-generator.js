@@ -40,5 +40,5 @@ function generateData(total) {
             return 0;
         }
     })
-    fs.writeFileSync('db.json', JSON.stringify(data, null, 2));
+    fs.writeFileSync('db.json', JSON.stringify({ data: data }, null, 2));
 }
