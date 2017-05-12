@@ -23,8 +23,8 @@ function generateData(total) {
             seed: seed,
             contact: chance.pickset(CONTACTS, chance.integer({min: 0, max: CONTACTS.length})),
             tower: chance.pickone(TOWERS),
-            latitude: chance.latitude(38.938751, 38.978824),
-            longitude: chance.longitude(-77.327712, -77.406521),
+            latitude: chance.latitude({ min: 38.938751, max: 38.978824 }),
+            longitude: chance.longitude({ min: -77.406521, max: -77.327712 }),
             context: `${chance.sentence().slice(0, -1)} ${seed} ${chance.sentence().toLowerCase()}`
         }
         data.push(record);        
