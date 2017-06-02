@@ -2,7 +2,7 @@ const Chance = require('chance');
 const chance = new Chance();
 const fs = require('fs');
 
-const ACTIVITY_TYPES = ['Call', 'SMS', ''];
+const ACTIVITY_TYPES = ['C', 'S', ''];
 const date = {start: 1491019200000, end:1493524800000}
 const SEEDS = ['5387467238', '7038762345', '5376462406', '2068454617', '2223557131'];
 const CONTACTS = ['7267656920', '2604154787', '6404354735', '4772775348', '2303159102',
