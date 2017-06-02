@@ -1,5 +1,5 @@
 {
-    "name": "faker",
+    "name": "data-api",
     "version": "1.0.0",
     "description": "Simple server to serve test data",
     "main": "index.js",
@@ -9,6 +9,9 @@
     },
     "author": "Ryan Crosser",
     "license": "MIT",
+    "engines": {
+        "node": "7.10.0"
+    },
     "dependencies": {
         "json-server": "^0.9.6"
     },

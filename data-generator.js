@@ -15,7 +15,13 @@ generateData(10000);
 function generateData(total) {
     const data = [];
     for (let i = 0; i < total; i++){
-        let seed = chance.pickone(SEEDS);
+        const seed = chance.pickone(SEEDS);
+
+        let anotherSeed = chance.pickone(SEEDS);
+        while (seed === anotherSeed) {
+            anotherSeed = chance.pickone(SEEDS);
+        }
+
         const record = {
             _id: chance.guid(),
             activityType: chance.pickone(ACTIVITY_TYPES),
@@ -27,6 +33,14 @@ function generateData(total) {
             longitude: chance.longitude({ min: -77.406521, max: -77.327712 }),
             context: `${chance.sentence().slice(0, -1)} ${seed} ${chance.sentence().toLowerCase()}`
         }
+
+        const randomNum = chance.integer({ min: 0, max: 10 });
+        
+        // one in ten chance
+        if (randomNum % 10 === 1) {
+            record.contact.push(anotherSeed);
+        }
+
         data.push(record);        
     }
 
